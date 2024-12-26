@@ -33,7 +33,7 @@ const monedasDisponibles = ['USD', 'EUR', 'GBP', 'ARS', 'BRL'];
 function convertirMoneda(monedaOrigen, monedaDestino, cantidad) {
     const tasaCambio = exchangeRates[monedaOrigen][monedaDestino];
     const resultado = cantidad * tasaCambio;
-    alert(La cantidad de ${cantidad} ${monedaOrigen} es igual a ${resultado.toFixed(2)} ${monedaDestino}.\nTipo de cambio: 1 ${monedaOrigen} = ${tasaCambio} ${monedaDestino});
+    alert(`La cantidad de ${cantidad} ${monedaOrigen} es igual a ${resultado.toFixed(2)} ${monedaDestino}.\nTipo de cambio: 1 ${monedaOrigen} = ${tasaCambio} ${monedaDestino}`);
 }
 
 // Función para verificar si una moneda es válida utilizando un array
@@ -58,7 +58,7 @@ function obtenerCantidadValida() {
 function mostrarTasasCambio() {
     let mensaje = "Tasas de cambio disponibles:\n";
     for (let monedaOrigen in exchangeRates) {
-        mensaje += ${monedaOrigen}:\n;
+        mensaje += `${monedaOrigen}:\n`;
         for (let monedaDestino in exchangeRates[monedaOrigen]) {
             mensaje += `  ${monedaDestino}: ${exchangeRates[monedaOrigen][monedaDestino]}\n`;
         }
